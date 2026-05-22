@@ -30,8 +30,14 @@ define Device/cmcc_mr3000d-ci
 	PAGESIZE := 2048
 	IMAGE_SIZE := 59392k
 	NAND_SIZE := 128m
-	DEVICE_PACKAGES := ath11k-firmware-ipq5018-qcn6122 \
-		ipq-wifi-cmcc_mr3000d-ci
+	DEVICE_PACKAGES := ipq-wifi-cmcc_mr3000d-ci ath11k-firmware-ipq5018-qcn6122 \
+		-ath11k-firmware-ipq5018 \
+		-dnsmasq-full dnsmasq \
+		kmod-dsa-qca8k \
+		-automount \
+		-kmod-usb3 -kmod-usb-dwc3 -kmod-usb-dwc3-qcom \
+		-kmod-usb-storage -kmod-usb-storage-uas \
+		-ntfs3-mount
 endef
 TARGET_DEVICES += cmcc_mr3000d-ci
 
